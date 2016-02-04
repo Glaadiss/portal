@@ -1,0 +1,6 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.collection_check_boxes :user, User.all, :email, :email %>
+  <%= f.button :submit %>
+<% end %>
