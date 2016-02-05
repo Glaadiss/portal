@@ -1,5 +1,3 @@
-<h1>Messages#show</h1>
+<h1>Your Message from <%=@message.user.email %></h1>
 <h2><%= @message.title %></h2>	
 <h3> <%= @message.description %></h3>
-<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, 
-class: "btn btn-custom" %>

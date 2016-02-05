@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+	before_action :authenticate_user!, only:[:index, :new, :create]
 	before_action :find_message, only: [:show, :destroy, :update, :edit]
 
 	def index
@@ -49,6 +50,6 @@ class MessagesController < ApplicationController
 		end
 
 		def find_message
-			@message = Post.find_by(token: params[:token])
+			@message = Message.find_by_token(params[:token])
 		end
 end
